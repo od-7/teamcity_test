@@ -13,16 +13,11 @@ import java.util.Scanner;
 public class HtmlResponder {
     private static String html = "";
     public static void main(String[] args) throws IOException {
-        try {
-            File response = new File("response.html");
-            Scanner reader = new Scanner(response);
-            while(reader.hasNextLine()) {
-                html += reader.nextLine() + '\n';
-            }
-            reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        Scanner reader = new Scanner(HtmlResponder.class.getResourceAsStream("/response.html"));
+        while(reader.hasNextLine()) {
+            html += reader.nextLine() + '\n';
         }
+        reader.close();
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/", new MyHttpHandler());

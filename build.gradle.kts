@@ -1,5 +1,6 @@
 plugins {
     java
+    application
 }
 
 java {
@@ -10,6 +11,14 @@ java {
     }
 }
 
+tasks.jar {
+    manifest {
+        attributes(mapOf("Implementation-Title" to project.name,
+        "Implementation-Version" to project.version,
+        "Main-Class" to "HtmlResponder"))
+    }
+    println("Just made a jar. Wow!")
+}
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
