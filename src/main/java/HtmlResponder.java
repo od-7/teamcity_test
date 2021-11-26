@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class HtmlResponder {
     private static String html = "";
-    public static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         try {
             File response = new File("response.html");
             Scanner reader = new Scanner(response);
@@ -25,7 +25,7 @@ public class HtmlResponder {
         }
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        server.createContext("/test", new MyHttpHandler());
+        server.createContext("/", new MyHttpHandler());
         server.setExecutor(null);
         server.start();
     }
