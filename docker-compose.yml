@@ -3,6 +3,6 @@ services:
   webapp:
       build: ./
       volumes:
-      - "./build/libs"
+      - "./build/libs:/usr/app"
       ports:
       - "8080:8080"
