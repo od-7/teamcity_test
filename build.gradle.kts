@@ -5,8 +5,8 @@ plugins {
 
 java {
     if(plugins.hasPlugin("java")) { //Programmatically adding new stuff
-        sourceCompatibility = JavaVersion.VERSION_15
-        targetCompatibility = JavaVersion.VERSION_15
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
         println("It works just fine!")
     }
 }
@@ -28,5 +28,5 @@ repositories {
 }
 
 dependencies {
-    testCompile("junit", "junit", "4.12")
+    //testCompile("junit", "junit", "4.12")
 }
