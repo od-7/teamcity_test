@@ -1,8 +1,6 @@
 version: "3"
 services:
   webapp:
-      build: ./
-      volumes:
-      - "./build/libs:/usr/app"
       ports:
       - "8080:8080"
+      image: "teamcity_test:latest"
